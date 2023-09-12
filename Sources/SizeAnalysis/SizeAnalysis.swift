@@ -62,7 +62,7 @@ class SizeAnalysis {
         }
         var analysis = ""
         analysis += "Size: \(data.sizeInMB.rounded(toPlaces: 2)) MB\n"
-        analysis += "Lenght: \(data.lengthInMB.rounded(toPlaces: 2)) MB\n"
+        analysis += "Length: \(data.lengthInMB.rounded(toPlaces: 2)) MB\n"
         analysis += "File count: \(data.fileCount)\n"
         analysis += "Dependencies size: \(data.dependenceisSizeInMB.rounded(toPlaces: 2)) MB\n"
         let categorySizes = data.fileCategorySizes ?? [:]
@@ -71,6 +71,7 @@ class SizeAnalysis {
             let sizeInMb = Double(categorySize) / 1_000_000
             analysis += "\(category.rawValue) size: \(sizeInMb.rounded(toPlaces: 2)) MB, \(Int(sizeInMb * 100 / data.sizeInMB))% of total app size\n"
         }
+        
         return analysis
     }
     
